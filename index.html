@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aircaribescol | Crónicas de las 7 Maravillas del Mundo</title>
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --secondary-color: #f4f4f4;
+            --accent-color: #c5a059; /* Dorado sobrio profesional */
+            --border-style: 1px solid #333;
+            --text-main: #222;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #fff;
+        }
+
+        /* Estructura de Recuadros */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            border-bottom: 3px double var(--primary-color);
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-weight: 900;
+        }
+
+        nav {
+            border-top: var(--border-style);
+            border-bottom: var(--border-style);
+            margin-top: 20px;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary-color);
+            padding: 0 20px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        /* Grid de Maravillas */
+        .main-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 0; /* Uniones de recuadros */
+            border-left: var(--border-style);
+            border-top: var(--border-style);
+        }
+
+        .wonder-card {
+            border-right: var(--border-style);
+            border-bottom: var(--border-style);
+            padding: 30px;
+            transition: background 0.3s;
+        }
+
+        .wonder-card:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 250px;
+            background-color: #ddd;
+            margin-bottom: 20px;
+            overflow: hidden;
+            border: 1px solid #000;
+        }
+
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(30%);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-style: italic; /* Letra en cursiva como pediste */
+        }
+
+        .content-text {
+            font-size: 1rem;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        .meta-data {
+            font-style: italic;
+            font-size: 0.85rem;
+            color: #666;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+
+        /* Secciones Adicionales */
+        .legal-section {
+            margin-top: 60px;
+            padding: 40px;
+            border: 2px solid var(--primary-color);
+            background: var(--secondary-color);
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 40px 0;
+            border-top: var(--border-style);
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo { font-size: 1.8rem; }
+            nav ul { flex-direction: column; align-items: center; }
+            nav a { padding: 5px 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="logo">Aircaribescol</div>
+        <p>Investigación Histórica y Documentación Global</p>
+        <nav>
+            <ul>
+                <li><a href="#maravillas">Patrimonio</a></li>
+                <li><a href="#metodologia">Metodología</a></li>
+                <li><a href="#privacidad">Políticas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="maravillas">
+        <div class="main-grid">
+            <article class="wonder-card">
+                <div class="image-placeholder">
+                    <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80" alt="Taj Mahal">
+                </div>
+                <h2>El Mausoleo de Agra</h2>
+                <p class="content-text">
+                    <i>Representando la cúspide de la arquitectura mogola, esta estructura de mármol blanco destaca por su simetría perfecta y el uso de piedras preciosas incrustadas.</i>
+                </p>
+                <div class="meta-data">Ubicación: India | Clasificación: Patrimonio Humanidad</div>
+            </article>
+
+            <article class="wonder-card">
+                <div class="image-placeholder">
+                    <img src="https://images.unsplash.com/photo-1587586062323-836089e60d52?auto=format&fit=crop&w=800&q=80" alt="Machu Picchu">
+                </div>
+                <h2>El Santuario de Machu Picchu</h2>
+                <p class="content-text">
+                    <i>Una obra maestra de la ingeniería inca situada en el corazón de los Andes. Su construcción sobre fallas geológicas demuestra un conocimiento técnico avanzado.</i>
+                </p>
+                <div class="meta-data">Ubicación: Perú | Clasificación: Ingeniería Civil</div>
+            </article>
+
+            <article class="wonder-card">
+                <div class="image-placeholder">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80" alt="Coliseo Romano">
+                </div>
+                <h2>El Anfiteatro Flavio</h2>
+                <p class="content-text">
+                    <i>Símbolo del poder imperial romano, el Coliseo sentó las bases de la arquitectura moderna de estadios y recintos de gestión de multitudes masivas.</i>
+                </p>
+                <div class="meta-data">Ubicación: Italia | Clasificación: Monumento Histórico</div>
+            </article>
+
+            <article class="wonder-card">
+                <div class="image-placeholder">
+                    <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80" alt="Petra">
+                </div>
+                <h2>La Ciudad de Petra</h2>
+                <p class="content-text">
+                    <i>Esculpida directamente en los acantilados de arenisca roja, esta urbe nabatea es un testimonio de la gestión hídrica en entornos desérticos extremos.</i>
+                </p>
+                <div class="meta-data">Ubicación: Jordania | Clasificación: Arqueología Epigráfica</div>
+            </article>
+        </div>
+    </main>
+
+    <section id="privacidad" class="legal-section">
+        <h2>Políticas de Privacidad y Transparencia</h2>
+        <p class="content-text">
+            <i>En Aircaribescol, nos comprometemos con la veracidad de la información. Este sitio cumple con el Reglamento General de Protección de Datos (RGPD). No recopilamos información personal sin consentimiento expreso a través de nuestros canales oficiales. La información presentada aquí tiene fines estrictamente educativos e informativos.</i>
+        </p>
+        <p class="content-text">
+            Responsable: Departamento Editorial Aircaribescol. Contacto: admin@aircaribescol.com
+        </p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Aircaribescol - Todos los derechos reservados.</p>
+        <p>Este sitio web utiliza fuentes verificadas de la UNESCO y organismos de patrimonio global.</p>
+    </footer>
+</div>
+
+<script>
+    // Script para interactividad profesional
+    document.addEventListener('DOMContentLoaded', () => {
+        const cards = document.querySelectorAll('.wonder-card');
+        
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.borderColor = '#c5a059';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.borderColor = '#333';
+            });
+        });
+
+        // Navegación suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
